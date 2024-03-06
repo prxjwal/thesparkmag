@@ -6,6 +6,12 @@ class WordPressController extends GetxController {
   var isLoading = true.obs;
   var posts = <dynamic>[].obs;
 
+  @override
+  void onInit() {
+    super.onInit();
+    fetchPosts();
+  }
+
   Future<String?> getFeaturedImageUrl(int postId) async {
     try {
       var finalpostid = postId + 1;
